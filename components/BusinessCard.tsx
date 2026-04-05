@@ -1,8 +1,14 @@
 "use client";
+import { useState } from "react";
 
 export default function BusinessCard() {
+
+  const [flipped, setFlipped] = useState(false);
+
   return (
-    <div style={{ perspective: "1000px", width: 340, height: 190 }}>
+    <div style={{ perspective: "1000px", width: 340, height: 190 }}
+    onClick={() => setFlipped((f) => !f)}
+    >
       <div
         style={{
           width: "100%",
@@ -11,6 +17,7 @@ export default function BusinessCard() {
           transformStyle: "preserve-3d",
           transition: "transform 0.6s ease",
           cursor: "pointer",
+          transform: flipped ? "rotateY(180deg)" : "rotateY(0deg)",
         }}
         className="business-card-inner"
       >
@@ -180,11 +187,6 @@ export default function BusinessCard() {
         </div>
       </div>
 
-      <style>{`
-        .business-card-inner:hover {
-          transform: rotateY(180deg);
-        }
-      `}</style>
     </div>
   );
 }
