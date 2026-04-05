@@ -22,6 +22,7 @@ const COMMANDS: Record<string, Line[]> = {
     { id: 0, type: "output", text: "  projects --show     → proyectos activos" },
     { id: 0, type: "output", text: "  audits --show       → auditorías de seguridad" },
     { id: 0, type: "output", text: "  contact --info      → cómo contactarme" },
+    { id: 0, type: "output", text: "  card --show         → tarjeta de presentación" },
     { id: 0, type: "output", text: "  clear               → limpiar terminal" },
     { id: 0, type: "output", text: "  help                → mostrar este menú" },
   ],
@@ -93,6 +94,10 @@ const COMMANDS: Record<string, Line[]> = {
     { id: 0, type: "output", text: "" },
     { id: 0, type: "output", text: "  Abierto a freelance y oportunidades full-time." },
   ],
+  "card --show": [
+    { id: 0, type: "accent", text: "Abriendo tarjeta de presentación..." },
+    { id: 0, type: "output", text: "[ usa el comando para ver la tarjeta en pantalla ]" },
+  ],
 };
 
 const lineVariant = {
@@ -144,6 +149,9 @@ export default function Terminal() {
 
     if (COMMANDS[cmd]) {
       append([echoLine, ...COMMANDS[cmd]]);
+      if (cmd === "card --show") {
+        window.dispatchEvent(new CustomEvent("open-card"));
+      }
     } else {
       append([
         echoLine,
