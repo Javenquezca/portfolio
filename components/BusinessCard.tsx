@@ -23,6 +23,7 @@ export default function BusinessCard() {
       >
         {/* Front */}
         <div
+          data-face="front"
           style={{
             position: "absolute",
             inset: 0,
