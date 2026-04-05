@@ -88,9 +88,9 @@ const COMMANDS: Record<string, Line[]> = {
   ],
   "contact --info": [
     { id: 0, type: "accent", text: "─── Contacto ────────────────────────────────" },
-    { id: 0, type: "output", text: "  Email   : hello@javiervasquez.dev" },
-    { id: 0, type: "output", text: "  GitHub  : github.com/Javenquezca" },
-    { id: 0, type: "output", text: "  LinkedIn: linkedin.com/in/javiervasquez" },
+    { id: 0, type: "output", text: "  Email   : jastivenv@gmail.com" },
+    { id: 0, type: "output", text: "  GitHub  : https://github.com/Javenquezca" },
+    { id: 0, type: "output", text: "  LinkedIn: https://www.linkedin.com/in/javier-stiven-vasquez-claros-85547525a/?skipRedirect=true" },
     { id: 0, type: "output", text: "" },
     { id: 0, type: "output", text: "  Abierto a freelance y oportunidades full-time." },
   ],
