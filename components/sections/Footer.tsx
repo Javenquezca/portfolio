@@ -1,0 +1,44 @@
+"use client";
+
+import { Code2 as Github, Info as Linkedin, ArrowUp } from "lucide-react";
+
+const socials = [
+  { icon: Github, label: "GitHub", href: "https://github.com/Javenquezca" },
+  { icon: Linkedin, label: "LinkedIn", href: "https://www.linkedin.com/in/javier-stiven-vasquez-claros-85547525a/?skipRedirect=true" },
+];
+
+export default function Footer() {
+  return (
+    <footer className="w-full border-t border-[var(--border)] bg-[var(--bg-surface)]">
+      <div className="max-w-5xl mx-auto px-4 py-6 flex flex-col sm:flex-row items-center justify-between gap-4">
+        <p className="font-mono text-[var(--text-muted)] text-xs">
+          © 2026 Javier Vásquez
+        </p>
+
+        <div className="flex items-center gap-6">
+          {socials.map(({ icon: Icon, label, href }) => (
+            <a
+              key={label}
+              href={href}
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label={label}
+              className="text-[var(--text-muted)] hover:text-[var(--cyan)] transition-colors duration-200"
+            >
+              <Icon size={16} strokeWidth={1.5} />
+            </a>
+          ))}
+
+          <button
+            onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}
+            aria-label="Volver arriba"
+            className="flex items-center gap-1.5 font-mono text-xs text-[var(--text-muted)] hover:text-[var(--cyan)] transition-colors duration-200"
+          >
+            <ArrowUp size={14} strokeWidth={1.5} />
+            Arriba
+          </button>
+        </div>
+      </div>
+    </footer>
+  );
+}

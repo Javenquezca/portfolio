@@ -1,26 +1,71 @@
 @import "tailwindcss";
 
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  /* Core palette */
+  --bg-primary:   #050505;
+  --bg-surface:   #0d0d0d;
+  --bg-elevated:  #111111;
+  --border:       #1a1a1a;
+
+  /* Accent */
+  --cyan:         #00e5ff;
+  --cyan-dim:     rgba(0, 229, 255, 0.15);
+  --cyan-glow:    rgba(0, 229, 255, 0.4);
+
+  /* Text */
+  --text-primary: #e8e8e8;
+  --text-muted:   #6b7280;
+  --text-faint:   #374151;
+
+  /* Fonts */
+  --font-serif: 'DM Serif Display', Georgia, serif;
+  --font-mono:  'DM Mono', 'Courier New', monospace;
 }
 
 @theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+  --color-background: var(--bg-primary);
+  --color-foreground: var(--text-primary);
+  --color-cyan:       var(--cyan);
+  --color-surface:    var(--bg-surface);
+  --color-elevated:   var(--bg-elevated);
+  --color-border:     var(--border);
+  --color-muted:      var(--text-muted);
+  --font-serif:       var(--font-serif);
+  --font-mono:        var(--font-mono);
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
-}
+/* Base */
+*, *::before, *::after { box-sizing: border-box; }
+html { scroll-behavior: smooth; }
 
 body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  background-color: var(--bg-primary);
+  color: var(--text-primary);
+  font-family: var(--font-mono);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  min-height: 100dvh;
+}
+
+/* Typography helpers */
+.font-serif { font-family: var(--font-serif); }
+.font-mono  { font-family: var(--font-mono); }
+
+/* Cyan glow utilities */
+.text-cyan      { color: var(--cyan); }
+.border-cyan    { border-color: var(--cyan); }
+.glow-cyan      { text-shadow: 0 0 8px var(--cyan-glow), 0 0 24px var(--cyan-glow); }
+.glow-box-cyan  { box-shadow: 0 0 0 1px var(--cyan), 0 0 20px var(--cyan-dim); }
+
+/* Scrollbar */
+::-webkit-scrollbar             { width: 6px; }
+::-webkit-scrollbar-track       { background: var(--bg-primary); }
+::-webkit-scrollbar-thumb       { background: var(--border); border-radius: 3px; }
+::-webkit-scrollbar-thumb:hover { background: var(--cyan-dim); }
+
+/* Selection */
+::selection { background: var(--cyan-dim); color: var(--cyan); }
+
+.group:hover {
+  box-shadow: 0 0 28px 2px var(--cyan-glow);
 }
