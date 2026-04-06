@@ -3,6 +3,7 @@
 import { useEffect, useState } from "react";
 import { Code2 as Github, Info as Linkedin, ArrowUp, CreditCard } from "lucide-react";
 import CardModal from "@/components/CardModal";
+import ContactModal from "../ContactModal";
 
 const socials = [
   { icon: Github, label: "GitHub", href: "https://github.com/Javenquezca" },
@@ -11,6 +12,7 @@ const socials = [
 
 export default function Footer() {
   const [isCardOpen, setIsCardOpen] = useState(false);
+  const [contactOpen, setContactOpen] = useState(false);
 
   useEffect(() => {
     const handler = () => setIsCardOpen(true);
@@ -58,6 +60,12 @@ export default function Footer() {
               <ArrowUp size={14} strokeWidth={1.5} />
               Arriba
             </button>
+
+            <button onClick={() => setContactOpen(true)} className="...">
+              Contactar
+            </button>
+
+            <ContactModal isOpen={contactOpen} onClose={() => setContactOpen(false)} />
           </div>
         </div>
       </footer>
