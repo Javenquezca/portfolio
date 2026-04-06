@@ -27,7 +27,7 @@ export const metadata: Metadata = {
     title: "Javier Vásquez — Dev & Security",
     description:
       "Desarrollador Full-Stack e Investigador en Seguridad. Proyectos en producción, auditorías, CTFs y bug bounty.",
-    url: "https://javiervasquez.dev",
+    url: "https://portfolio-pearl-six-15.vercel.app/",
     siteName: "Javier Vásquez",
     locale: "es_CO",
     type: "website",
@@ -37,6 +37,17 @@ export const metadata: Metadata = {
     title: "Javier Vásquez — Dev & Security",
     description:
       "Desarrollador Full-Stack e Investigador en Seguridad. Proyectos en producción, auditorías, CTFs y bug bounty.",
+  },
+  icons: {
+    icon: [
+      { url: "/favicon-16x16.png", sizes: "16x16", type: "image/png" },
+      { url: "/favicon-32x32.png", sizes: "32x32", type: "image/png" },
+    ],
+    apple: "/apple-touch-icon.png",
+    other: [
+      { rel: "android-chrome-192x192", url: "/android-chrome-192x192.png" },
+      { rel: "android-chrome-512x512", url: "/android-chrome-512x512.png" },
+    ],
   },
 };
 
